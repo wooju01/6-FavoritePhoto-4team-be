@@ -11,7 +11,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: 'https://six-favoritephoto-4team-be.onrender.com/api/auth/google/callback'
+      callbackURL: 'https://six-favoritephoto-4team-be-distribute.onrender.com/api/auth/google/callback'
     },
     async (accessToken, refreshToken, profile, done) => {
       try {

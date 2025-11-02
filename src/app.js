@@ -20,7 +20,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      'https://6-favorite-photo-4team-fe.vercel.app',
+      'https://six-favoritephoto-4team-be-distribute.onrender.com',
       'http://localhost:3000' // 로컬 개발 환경 주소
     ],
     credentials: true
