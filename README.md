@@ -1,8 +1,6 @@
 # [4팀] 최애의 포토
+![최애의 포토1](https://github.com/user-attachments/assets/8edeaded-c705-45d5-9334-a232067d7092)
 
-<p align="center">
-<img src="https://private-user-images.githubusercontent.com/49442904/450694275-8edeaded-c705-45d5-9334-a232067d7092.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg5NDQ5MjMsIm5iZiI6MTc0ODk0NDYyMywicGF0aCI6Ii80OTQ0MjkwNC80NTA2OTQyNzUtOGVkZWFkZWQtYzcwNS00NWQ1LTkzMzQtYTIzMjA2N2Q3MDkyLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA2MDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNjAzVDA5NTcwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI2NDg4MjA0NmE5MmFjMzUxZmNiZDBkMTk4MzJkZmZkNDRiY2I4MjM3YmFiOWYzN2Q4OTdjNGMyZTg1NjQ5NGQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.VjpXWdGcUsW1W_Z_oB6SvXYxImJC4qUMseN20vC-Q6M" alt="메인 사진" />
-</p>
 <br />
 
 ## 📑 목차
