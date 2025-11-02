@@ -38,14 +38,21 @@ export async function claimRandomBox(userId, io = null) {
     }
   }
   // 포인트 적립
-  await updatePoint(userId, randomPoints, io);
-  // lastClaimed, todayClaimCount만 별도 갱신 (id로 업데이트)
-  const updatedPoint = await prisma.userPoint.findFirst({ where: { userId } });
+  const updateResult = await updatePoint(userId, randomPoints, io);
+  // lastClaimed, todayClaimCount만 별도 갱신
+  let updatedPoint = updateResult.userPoint;
+  if (!updatedPoint) {
+    // updatePoint에서 userPoint를 반환하지 않으면 다시 조회
+    updatedPoint = await prisma.userPoint.findFirst({ where: { userId } });
+  }
+  if (!updatedPoint) {
+    throw new Error('UserPoint를 찾을 수 없습니다.');
+  }
   const updated = await prisma.userPoint.update({
     where: { id: updatedPoint.id },
     data: {
       lastClaimed: nowDate,
-      todayClaimCount: resetTodayClaimCountFlag ? 1 : updatedPoint.todayClaimCount + 1
+      todayClaimCount: resetTodayClaimCountFlag ? 1 : (updatedPoint.todayClaimCount || 0) + 1
     }
   });
   return {
@@ -102,5 +109,5 @@ export async function updatePoint(userId, amount, io = null) {
       todayClaimCount: userPoint.todayClaimCount
     });
   }
-  return { points: amount, totalPoints: userPoint.points };
+  return { points: amount, totalPoints: userPoint.points, userPoint };
 }
