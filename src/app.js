@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       // 프론트 배포 도메인 (Vercel)
-      'https://favorite-photo-git-main-woos-projects-f1feb734.vercel.app',
+      'https://favorite-photo-psi.vercel.app',
       // 로컬 개발 환경
       'http://localhost:3000'
     ],
@@ -53,10 +53,7 @@ app.use(errorHandler);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [
-      'https://favorite-photo-git-main-woos-projects-f1feb734.vercel.app',
-      'http://localhost:3000'
-    ],
+    origin: ['https://favorite-photo-psi.vercel.app', 'http://localhost:3000'],
     credentials: true
   }
 });
