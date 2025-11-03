@@ -20,10 +20,15 @@ const app = express();
 app.use(
   cors({
     origin: [
-      'https://six-favoritephoto-4team-be-distribute.onrender.com',
-      'http://localhost:3000' // 로컬 개발 환경 주소
+      // 프론트 배포 도메인 (Vercel)
+      'https://favorite-photo-git-main-woos-projects-f1feb734.vercel.app',
+      // 로컬 개발 환경
+      'http://localhost:3000'
     ],
-    credentials: true
+    credentials: true,
+    methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+    allowedHeaders: ['Content-Type','Authorization'],
+    optionsSuccessStatus: 200
   })
 );
 app.use(express.json());
@@ -48,7 +53,10 @@ app.use(errorHandler);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ['https://6-favorite-photo-4team-fe.vercel.app', 'http://localhost:3000'],
+    origin: [
+      'https://favorite-photo-git-main-woos-projects-f1feb734.vercel.app',
+      'http://localhost:3000'
+    ],
     credentials: true
   }
 });
