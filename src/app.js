@@ -15,6 +15,7 @@ import { Server } from 'socket.io';
 import http from 'http';
 import tradeRequestController from './controllers/TradeRequestController.js';
 import tradeController from './controllers/TradeController.js';
+import { resetSequences } from './config/resetSequences.js';
 
 const app = express();
 app.use(
@@ -50,6 +51,9 @@ app.use('/api/store', purchasecontroller);
 app.use(errorHandler);
 
 // 기존 app.listen 대신 http 서버 생성
+// 시퀀스 초기화 (시드 데이터로 인해 시퀀스가 뒤쳐진 경우를 방지)
+await resetSequences();
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
