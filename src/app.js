@@ -52,7 +52,10 @@ app.use(errorHandler);
 
 // 기존 app.listen 대신 http 서버 생성
 // 시퀀스 초기화 (시드 데이터로 인해 시퀀스가 뒤쳐진 경우를 방지)
-await resetSequences();
+if (process.env.RESET_SEQ === 'true') {
+  await resetSequences();
+}
+
 
 const server = http.createServer(app);
 const io = new Server(server, {
