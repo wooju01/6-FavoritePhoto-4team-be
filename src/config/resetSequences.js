@@ -16,7 +16,7 @@ export async function resetSequences() {
     const sql = `
       SELECT setval(
         pg_get_serial_sequence('"${table}"', 'id'),
-        GREATEST(COALESCE((SELECT MAX(id) FROM "${table}"), 0), 0)
+        GREATEST(COALESCE((SELECT MAX(id) FROM "${table}"), 1), 1)
       );
     `;
     // eslint-disable-next-line no-await-in-loop
