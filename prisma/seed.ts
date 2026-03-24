@@ -145,7 +145,7 @@ async function main() {
     if (Array.isArray(saleData) && saleData.length > 0) {
       console.log('Sale 데이터 삽입 중...');
       for (const sale of saleData) {
-        await prisma.sale.create({
+        const createdSale = await prisma.sale.create({
           data: {
             photoCardId: sale.photoCardId,
             sellerId: sale.sellerId,
@@ -158,6 +158,26 @@ async function main() {
             createdAt: sale.createdAt ? new Date(sale.createdAt) : new Date(),
           },
         });
+
+        // 구매 가능하도록 판매 수량만큼 UserCard + SaleUserCard를 함께 생성
+        const quantity = sale.saleQuantity || 1;
+        for (let i = 0; i < quantity; i++) {
+          const createdUserCard = await prisma.userCard.create({
+            data: {
+              photoCardId: sale.photoCardId,
+              ownerId: sale.sellerId,
+              price: sale.price,
+              status: 'AVAILABLE',
+            },
+          });
+
+          await prisma.saleUserCard.create({
+            data: {
+              saleId: createdSale.id,
+              userCardId: createdUserCard.id,
+            },
+          });
+        }
       }
       console.log(`✓ Sale ${saleData.length}개 삽입 완료`);
     } else {
