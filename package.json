@@ -7,6 +7,9 @@
     "start": "node src/app.js",
     "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
+  "prisma": {
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

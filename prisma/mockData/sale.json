@@ -1,0 +1,52 @@
+[
+  {
+    "sellerId": "a1b2c3d4-e1f2-4a5b-8c6d-1e2f3a4b5c6d",
+    "photoCardId": 1,
+    "userCardIds": [1, 2],
+    "salePrice": 1500,
+    "saleQuantity": 1,
+    "desiredGradeId": 1,
+    "desiredGenreId": 1,
+    "desiredDescription": "노을 카드 판매합니다"
+  },
+  {
+    "sellerId": "b2c3d4e5-f2a1-5b6c-7d8e-2f3a4b5c6d7e",
+    "photoCardId": 2,
+    "userCardIds": [3, 4],
+    "salePrice": 2200,
+    "saleQuantity": 2,
+    "desiredGradeId": 2,
+    "desiredGenreId": 2,
+    "desiredDescription": "산 카드 교환 원해요"
+  },
+  {
+    "sellerId": "c3d4e5f6-a1b2-6c7d-8e9f-3a4b5c6d7e8f",
+    "photoCardId": 3,
+    "userCardIds": [5],
+    "salePrice": 3200,
+    "saleQuantity": 1,
+    "desiredGradeId": 3,
+    "desiredGenreId": 1,
+    "desiredDescription": "도시 야경 판매"
+  },
+  {
+    "sellerId": "d4e5f6a7-b2c3-7d8e-9f0a-4b5c6d7e8f9a",
+    "photoCardId": 4,
+    "userCardIds": [6, 7, 8],
+    "salePrice": 1000,
+    "saleQuantity": 2,
+    "desiredGradeId": 1,
+    "desiredGenreId": 2,
+    "desiredDescription": "숲길 카드 팝니다"
+  },
+  {
+    "sellerId": "e5f6a7b8-c3d4-8e9f-0a1b-5c6d7e8f9a0b",
+    "photoCardId": 5,
+    "userCardIds": [9, 10],
+    "salePrice": 2000,
+    "saleQuantity": 1,
+    "desiredGradeId": 2,
+    "desiredGenreId": 3,
+    "desiredDescription": "인물 카드 판매"
+  }
+]
