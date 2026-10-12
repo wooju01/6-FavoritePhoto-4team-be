@@ -1,6 +1,6 @@
 import express from 'express';
 import passport from '../config/passport.js';
-import { claimRandomBox, getMyPoint, updatePoint } from '../services/PointService.js';
+import { claimRandomBox, getMyPoint } from '../services/PointService.js';
 
 const pointsController = express.Router();
 
@@ -28,23 +28,6 @@ pointsController.get(
     try {
       const userId = req.user.id;
       const result = await getMyPoint(userId);
-      res.json(result);
-    } catch (err) {
-      next(err);
-    }
-  }
-);
-
-// 포인트 증감 (amount: +면 증가, -면 차감)
-pointsController.post(
-  '/update',
-  passport.authenticate('access-token', { session: false, failWithError: true }),
-  async (req, res, next) => {
-    try {
-      const userId = req.user.id;
-      const { amount } = req.body;
-      const io = req.app.get('io');
-      const result = await updatePoint(userId, amount, io);
       res.json(result);
     } catch (err) {
       next(err);
