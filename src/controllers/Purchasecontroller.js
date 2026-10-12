@@ -11,8 +11,8 @@ purchaseRouter.post(
     try {
       const saleId = Number(req.params.id);
       const buyerId = req.user.id;
-      const { quantity } = req.body;
-      if (!quantity || quantity <= 0) {
+      const quantity = Number(req.body.quantity);
+      if (!Number.isInteger(quantity) || quantity <= 0) {
         return res.status(400).json({ message: '구매 수량을 올바르게 입력해주세요.' });
       }
 
